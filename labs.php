@@ -59,9 +59,9 @@ $menu = array(
     "Something else here" => "#"
 );
 
-foreach ($menu as $key => $value) {
+foreach ($menu as $key => $value)
     echo $key . ': ' . $value . '<br>';
-}
+
 
 echo "<br>";
 echo "<br>";
@@ -82,9 +82,9 @@ $menu = array(
 $keys = array_keys($menu);
 $values = array_values($menu);
 
-for ($i = 0; $i < count($keys); $i++) {
+for ($i = 0; $i < count($keys); $i++)
     echo $keys[$i] . ': ' . $values[$i] . '<br>';
-}
+
 
 // 3. Создайте массив ​ $books​ , каждый элемент которого будет ассоциативным массивом типа $book (должен содержать ключи idbook, title,author, price, description), выведите книги на главной странице так, чтобы ссылка "В корзину" содержала путь типа "?add=idbook", где idbook - номер книги.
 $books = array(
@@ -172,13 +172,13 @@ $books = array(
 $categories = array("Фантастика", "Роман", "Детская литература", "Научно-популярное");
 $publisher = array("Мир книги", "АСТ", "Эксмо");
 
-if (empty($categories) && empty($publisher)) {
+if (empty($categories) && empty($publisher))
     echo "элементов нет";
-} elseif (empty($categories)) {
+elseif (empty($categories))
     echo "элементов нет в категориях книг";
-} elseif (empty($publisher)) {
+elseif (empty($publisher))
     echo "элементов нет в издателях книг";
-}
+
 
 // 2. При помощи switch, в центральной части index.php, сопоставьте и выведите слова (для index - Главная, basket - Корзина, contacts - Контакты, delivery - Доставка, login - Вход) заголовках h1.
 
@@ -240,17 +240,17 @@ echo "В корзине: $n $product";
 
 $n = 221;
 
-if (($n % 100) >= 11 && ($n % 100) <= 14) {
+if (($n % 100) >= 11 && ($n % 100) <= 14)
     $product = "товаров";
-} else {
-    if (($n % 10) == 1) {
+else {
+    if (($n % 10) == 1)
         $product = "товар";
-    } else {
-        if (($n % 10) >= 2 && ($n % 10) <= 4) {
+    else {
+        if (($n % 10) >= 2 && ($n % 10) <= 4)
             $product = "товара";
-        } else {
+        else
             $product = "товров";
-        }
+
     }
 }
 
