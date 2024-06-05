@@ -1,4 +1,45 @@
 <?php
+// Практическая №3.1: Создание собственных функций
+// 1. Создайте и подключите в ​ index.php ​файл для хранения функций ​ lib.inc.php​.
+// 2. Создайте функцию renderCategories( $categories ), которая принимает массив категорий и возвращает разметку для категорий.
+<?php
+$categories = ["Фантастика", "Роман", "Детская литература", "Научно-популярное", "Фэнтези", "Детектив", "Поэзия", "Историческая проза", "Триллер", "Биография"];
+function renderCategories($categories)
+{
+    $tag = '<div class="row">';
+    foreach ($categories as $category)
+        $tag .= '<a class="dropdown-item" href="#">' . htmlspecialchars($category) . '</a>';
+
+    $tag .= '</div>';
+    return $tag;
+}
+echo renderCategories($categories);
+?>
+// 3. Вызовите функцию на месте вывода категорий.
+# В инексовой странице вместо 
+<h4>Категория</h4>
+        <div class="row">
+          <a class="dropdown-item" href="#"><?php echo $categories[0] ?></a>
+          <a class="dropdown-item" href="#"><?php echo $categories[1] ?></a>
+          <a class="dropdown-item" href="#"><?php echo $categories[2] ?></a>
+          <a class="dropdown-item" href="#"><?php echo $categories[3] ?></a>
+          <a class="dropdown-item" href="#"><?php echo $categories[0] ?></a>
+          <a class="dropdown-item" href="#"><?php echo $categories[1] ?></a>
+          <a class="dropdown-item" href="#"><?php echo $categories[2] ?></a>
+          <a class="dropdown-item" href="#"><?php echo $categories[3] ?></a>
+          <a class="dropdown-item" href="#"><?php echo $categories[0] ?></a>
+        </div>
+        <hr>
+
+        <h4>Цена</h4>
+# Прописываем
+<h4>Категория</h4>
+        <?include "inc/lib.inc.php"; 
+        ?>
+        <hr>
+
+        <h4>Цена</h4>
+
 // Практическая №2.2: Циклические конструкции
 // 1. При помощи циклов выведите содержимое массивов ​ $categories​и ​ $publisher​.
 
