@@ -1,4 +1,35 @@
 <?php
+// Устное задание:
+// Создать форму, в которой пользователь вводит 2 числа (2 input с типом number) нажатие на кнопку выводит результат сложения, запрос должен делаться методом POST.
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Суммирование 2 чисел</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        <label for="num1">Введите число 1:</label>
+        <input type="number" id="num1" name="num1" required>
+        <br>
+        <label for="num2">Введите число 2:</label>
+        <input type="number" id="num2" name="num2" required>
+        <br>
+        <input type="submit" value="Поехали">
+    </form>
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $num1 = $_POST["num1"];
+        $num2 = $_POST["num2"];
+        $sum = $num1 + $num2;
+        echo "Сумма: " . $sum;
+    }
+    ?>
+</body>
+
+</html>
+
 // Практическая №3.1: Создание собственных функций
 // 1. Создайте и подключите в ​ index.php ​файл для хранения функций ​ lib.inc.php​.
 // 2. Создайте функцию renderCategories( $categories ), которая принимает массив категорий и возвращает разметку для категорий.
